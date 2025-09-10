@@ -1,107 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perkenalan Diri - Raffi Putra Berlian</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Perkenalan - Raffi Putra Berlian</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-      color: #fff;
-      text-align: center;
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#4f46e5; --muted:#a3aab7; --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
     }
-    header {
-      padding: 30px 20px;
-    }
-    header img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 4px solid #00d9ff;
-      animation: pulse 4s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-    header h1 {
-      margin-top: 20px;
-      font-size: 2.5rem;
-      color: #00d9ff;
-    }
-    header p {
-      font-size: 1.1rem;
-      margin: 5px 0;
-    }
-    .container {
-      padding: 30px 20px;
-      max-width: 800px;
-      margin: auto;
-      text-align: left;
-    }
-    .section {
-      margin-bottom: 25px;
-    }
-    .section h2 {
-      color: #00d9ff;
-      border-bottom: 2px solid #00d9ff;
-      padding-bottom: 5px;
-      margin-bottom: 10px;
-    }
-    .contact a {
-      display: inline-block;
-      margin-right: 15px;
-      text-decoration: none;
-      color: #bbb; /* warna default lebih soft */
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    .contact a:hover {
-      color: #00d9ff; /* tetap biru saat hover */
-    }
+    *{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{margin:0;min-height:100vh;background:linear-gradient(180deg,var(--bg),#071024);color:#e6eef8}
+    header{padding:28px 32px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:48px;height:48px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{margin:0;font-size:20px}
+    .container{max-width:1100px;margin:20px auto;padding:24px;position:relative;z-index:2}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+    .hero-text h2{font-size:32px;margin:0 0 12px 0}
+    .hero-text p{color:var(--muted);margin:6px 0;font-size:15px;line-height:1.5}
+    .hero-cta{margin-top:16px;display:flex;flex-wrap:wrap;gap:12px}
+
+    .avatar .frame{width:300px;height:300px;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,0.5);animation:pulse 6s ease-in-out infinite;margin:auto}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+
+    /* Stats */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px}
+    .stat{background:var(--card);padding:20px;border-radius:14px;text-align:center;transition:transform .3s ease, background .3s ease}
+    .stat:hover{transform:translateY(-6px);background:var(--glass)}
+    .stat h3{margin:0;font-size:22px;color:#fff}
+    .stat p{margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.4}
+
+    /* Section tambahan */
+    .section{margin-top:50px}
+    .section h2{font-size:24px;margin-bottom:16px}
+    .skills{display:flex;gap:10px;flex-wrap:wrap}
+    .skill{background:var(--glass-2);padding:10px 14px;border-radius:10px;font-size:14px;color:var(--muted);transition:background .3s ease}
+    .skill:hover{background:var(--glass)}
+
+    /* Button */
+    a.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;text-decoration:none;color:#e6eef8;background:var(--accent);opacity:0.85;transition:opacity .3s ease, transform .3s ease}
+    a.btn:hover{opacity:1;transform:translateY(-3px)}
+
+    footer{margin-top:60px;color:var(--muted);font-size:13px;text-align:center;position:relative;z-index:2}
+    .bg-shape{position:fixed;right:-120px;top:-120px;opacity:0.12;filter:blur(80px);width:480px;height:480px;background:var(--accent);transform:rotate(20deg);z-index:0}
+
+    @media(max-width:860px){.hero{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.avatar .frame{width:240px;height:240px}}
   </style>
 </head>
 <body>
+  <div class="bg-shape" aria-hidden></div>
   <header>
-    <img src="foto.jpg" alt="Foto Profil">
-    <h1>Raffi Putra Berlian</h1>
-    <p><strong>NIM:</strong> M0405241056</p>
-    <p><strong>Program Studi:</strong> Artificial Intelligent</p>
-    <p><strong>Proxy:</strong> Huntington</p>
-    <p><strong>Fakultas:</strong> Sekolah Sains Data, Matematika, dan Informatika</p>
-    <p><strong>Kampus:</strong> IPB University</p>
-    <p><strong>Angkatan:</strong> 2024</p>
+    <div class="logo">
+      <div class="mark">AI</div>
+      <div>
+        <h1>Perkenalan Mahasiswa — Artificial Intelligent (IPB University)</h1>
+        <div style="font-size:13px;color:var(--muted)">Selamat datang di halaman perkenalan pribadi.</div>
+      </div>
+    </div>
   </header>
 
-  <div class="container">
-    <div class="section">
-      <h2>Sedang Belajar</h2>
-      <p>Struktur Data, Algoritma, dan Dasar-Dasar AI</p>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Halo, Saya Raffi Putra Berlian 👋</h2>
+        <p><strong>NIM:</strong> M0405241056</p>
+        <p><strong>Program Studi:</strong> Artificial Intelligent</p>
+        <p><strong>Proksi:</strong> Huntington | <strong>Angkatan:</strong> 2024</p>
+        <p><strong>Fakultas:</strong> Sekolah Sains Data, Matematika & Informatika — IPB University</p>
+        <div class="hero-cta">
+          <a class="btn" href="mailto:raffi.putrab@gmail.com">Email</a>
+          <a class="btn" href="https://instagram.com/raffi.putrab" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn" href="https://www.linkedin.com/in/raffi-putra-519563245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="avatar">
+        <div class="frame"><img src="IMG_9511.jpg" alt="Foto Raffi Putra Berlian"></div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="stat"><h3>Belajar</h3><p>Struktur Data, Algoritma, Dasar-Dasar AI</p></div>
+      <div class="stat"><h3>Target</h3><p>Rutin mengerjakan proyek mini tiap bulan</p></div>
+      <div class="stat"><h3>Motto</h3><p>"Build, measure, learn."</p></div>
+      <div class="stat"><h3>Minat</h3><p>Economics, Cybersecurity, Data Science</p></div>
     </div>
-    <div class="section">
-      <h2>Target</h2>
-      <p>Rutin mengerjakan proyek mini tiap bulan.</p>
-    </div>
-    <div class="section">
-      <h2>Motto</h2>
-      <p><em>"Build, measure, learn."</em></p>
-    </div>
-    <div class="section">
-      <h2>Bidang Minat</h2>
-      <p>Economics, Cybersecurity, Data Science</p>
-    </div>
-    <div class="section contact">
-      <h2>Kontak</h2>
-      <p>
-        <a href="mailto:raffiputra@email.com">Email</a>
-        <a href="https://instagram.com/raffiputra" target="_blank">Instagram</a>
-        <a href="https://linkedin.com/in/raffiputra" target="_blank">LinkedIn</a>
-      </p>
-    </div>
-  </div>
+
+    <section class="section">
+      <h2>Keterampilan</h2>
+      <div class="skills">
+        <div class="skill">Analisis Data</div>
+        <div class="skill">Pemrograman</div>
+        <div class="skill">Problem Solving</div>
+        <div class="skill">Kolaborasi Tim</div>
+        <div class="skill">Public Speaking</div>
+        <div class="skill">Manajemen Waktu</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tentang Saya</h2>
+      <p>Saya adalah seorang mahasiswa IPB University jurusan Artificial Intelligent dengan minat pada economics, data science, dan keamanan siber. Saya memiliki target untuk konsisten mengerjakan proyek mini tiap bulan sebagai upaya meningkatkan kemampuan diri. Dengan motto "Build, measure, learn", saya percaya bahwa pembelajaran terbaik datang dari pengalaman langsung.</p>
+    </section>
+
+    <footer>
+      Dibuat dengan ❤️ oleh Raffi Putra Berlian. Mahasiswa Artificial Intelligent IPB University.
+    </footer>
+  </main>
 </body>
 </html>
